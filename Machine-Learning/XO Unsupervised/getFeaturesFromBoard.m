@@ -1,0 +1,62 @@
+function [ X ] = getFeaturesFromBoard( board )
+%x1 num of empty
+%x2 num of full
+%x3 num of 1 X in  row
+%x4 num of 1 O in  row
+%x5 num of 2 Xs in a row
+%x6 num of 2 Os in a row
+%x7 num of 3 Xs in a row
+%x8 num of 3 Os in a row
+x1=0;
+x2=0;
+x3=0;
+x4=0;
+x5=0;
+x6=0;
+x7=0;
+x8=0;
+for i=1:3
+    for j=1:3
+        x3=x3+(length(find(board(i,:)==1))==1);
+        x4=x4+(length(find(board(i,:)==-1))==1);
+        x5=x5+(length(find(board(i,:)==1))==2);
+        x6=x6+(length(find(board(i,:)==-1))==2);
+        x7=x7+(length(find(board(i,:)==1))==3);
+        x8=x8+(length(find(board(i,:)==-1))==3);
+        
+        x3=x3+(length(find(board(:,j)==1))==1);
+        x4=x4+(length(find(board(:,j)==-1))==1);
+        x5=x5+(length(find(board(:,j)==1))==2);
+        x6=x6+(length(find(board(:,j)==-1))==2);
+        x7=x7+(length(find(board(:,j)==1))==3);
+        x8=x8+(length(find(board(:,j)==-1))==3);
+        if i==j
+        x3=x3+(length(find(diag(board)==1))==1);
+        x4=x4+(length(find(diag(board)==-1))==1);
+        x5=x5+(length(find(diag(board)==1))==2);
+        x6=x6+(length(find(diag(board)==-1))==2);
+        x7=x7+(length(find(diag(board)==1))==3);
+        x8=x8+(length(find(diag(board)==-1))==3);           
+        end;
+        if (((i==1)&&(j==3))||((i==3)&&(j==1))||((i==2)&&(j==2)))
+        invdiag=[board(1,3) board(2,2) board(3,1)];
+        x3=x3+(length(find(invdiag==1))==1);
+        x4=x4+(length(find(invdiag==-1))==1);
+        x5=x5+(length(find(invdiag==1))==2);
+        x6=x6+(length(find(invdiag==-1))==2);
+        x7=x7+(length(find(invdiag==1))==3);
+        x8=x8+(length(find(invdiag==-1))==3);   
+        
+        end;
+        
+    end;
+end;
+
+board=reshape(board,1,9);
+
+x1=length(find(board==0.5));
+x2=length(find(board~=0.5));
+X=[x1 x2 x3 x4 x5/3 x6/3 x7/3 x8/3];
+%devide by three becasue every element have increased by 3 in the loop
+end
+

@@ -1,0 +1,9 @@
+ ÇבדבÝ ÇבÃזב ÊÈÚ ÇבÝםÊÔÑÒ Ôבזה ÈØבÚה דה ÇבÈזÑÏ
+ÇבדבÝ ÇבËÇהם ‗Çה ÇÓדז 
+nnCostFunction
+ÇבÊÚÏםב ÈÃזבז וז ÇבÊÚבםד
+
+ÈÇÞם ÇבדבÝÇÊ דÇ Ýםזה זבÇ ÊÚÏםב ÈÓ ÇבÓ‗ÑםÈÊ
+input layer = 8 =םבם וז ÚÏÏ ÇבÝםÊÔÑÒ
+hiddenlayer=3 Ýם‗ ÇÊÛםÑוÇ
+labels=1 
