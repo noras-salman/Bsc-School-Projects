@@ -1,0 +1,12 @@
+hack id3;
+integer aa,a,id1,id2,i;
+{
+aa=aa*5+10 ;
+
+if (((a==2) & (id1==id2) & (aa==aa)))
+aa=a+2;
+
+for i=aa to 5
+aa=i+2;
+hackOut("lkajsd");
+}

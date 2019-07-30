@@ -1,0 +1,6 @@
+hack id;
+integer aa;
+{
+aa=+aa*5 + ;
+k=aa;
+}

@@ -1,0 +1,12 @@
+hack id3;
+integer a,b,c;
+{
+a=3;
+b=2;
+if (a>b)
+hackOut(a);
+else if (b>a)
+hackOut(b);
+else
+hackOut("notthing");
+}
